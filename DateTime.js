@@ -321,6 +321,10 @@ var Datetime = React.createClass({
 			DOM.div(
 				{ key: 'dt', className: 'rdtPicker' },
 				React.createElement( Component, this.getComponentProps())
+			),
+			DOM.div(
+					{ key: 'dt2', className: 'rdtPicker' },
+					React.createElement( this.viewComponents.time, this.getComponentProps())
 			)
 		));
 	}
