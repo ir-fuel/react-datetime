@@ -33,9 +33,9 @@ var DateTimePickerTime = React.createClass({
 	},
 	renderCounter: function( type ){
 		return DOM.div({ key: type, className: 'rdtCounter'}, [
-			DOM.button({ key:'up', className: 'rdtBtn', onMouseDown: this.onStartClicking( 'increase', type ), type: 'button' }, '▲' ),
+			DOM.button({ key:'up', className: 'rdtBtn', onMouseDown: this.onStartClicking( 'increase', type ), type: 'button' }, DOM.i({className:'fa fa-chevron-up'})),
 			DOM.div({ key:'c', className: 'rdtCount' }, this.state[ type ] ),
-			DOM.button({ key:'do', className: 'rdtBtn', onMouseDown: this.onStartClicking( 'decrease', type ), type: 'button' }, '▼' )
+			DOM.button({ key:'do', className: 'rdtBtn', onMouseDown: this.onStartClicking( 'decrease', type ), type: 'button' }, DOM.i({className:'fa fa-chevron-down'}) )
 		]);
 	},
 	render: function() {
@@ -78,13 +78,7 @@ var DateTimePickerTime = React.createClass({
 		}
 	},
 	renderHeader: function(){
-		if( !this.props.dateFormat )
 			return '';
-
-		var date = this.props.selectedDate || this.props.viewDate;
-		return DOM.thead({ key: 'h'}, DOM.tr({},
-			DOM.th( {className: 'rdtSwitch', colSpan: 4, onClick: this.props.showView('days')}, date.format( this.props.dateFormat ) )
-		));
 	},
 	onStartClicking: function( action, type ){
 		var me = this,

@@ -113,15 +113,7 @@ var DateTimePickerDays = React.createClass({
 	},
 
 	renderFooter: function(){
-		if( !this.props.timeFormat )
 			return '';
-
-		var date = this.props.selectedDate || this.props.viewDate;
-		return DOM.tfoot({ key: 'tf'},
-			DOM.tr({},
-				DOM.td({ onClick: this.props.showView('time'), colSpan: 7, className: 'rdtTimeToggle'}, date.format( this.props.timeFormat ))
-			)
-		);
 	},
 	isValidDate: function(){ return 1; }
 });

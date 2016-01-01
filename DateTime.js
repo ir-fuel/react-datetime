@@ -319,12 +319,10 @@ var Datetime = React.createClass({
 
 		return DOM.div({className: className}, children.concat(
 			DOM.div(
-				{ key: 'dt', className: 'rdtPicker' },
-				React.createElement( Component, this.getComponentProps())
-			),
-			DOM.div(
-					{ key: 'dt2', className: 'rdtPicker' },
-					React.createElement( this.viewComponents.time, this.getComponentProps())
+				{ key: 'dt', className: 'rdtPicker',style:{} },
+				[DOM.span({style:{flexGrow:'1.5'}},React.createElement( Component, this.getComponentProps())),
+					DOM.span({style:{flexGrow:'1'}},React.createElement( this.viewComponents.time, this.getComponentProps()))]
+
 			)
 		));
 	}
