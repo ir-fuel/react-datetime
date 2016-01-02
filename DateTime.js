@@ -320,8 +320,7 @@ var Datetime = React.createClass({
 		return DOM.div({className: className}, children.concat(
 			DOM.div(
 				{ key: 'dt', className: 'rdtPicker',style:{} },
-				[DOM.div({style:{flexGrow:'1.5'},key:'days'},React.createElement( Component, this.getComponentProps())),
-					DOM.div({style:{flexGrow:'1'},key:'time'},React.createElement( this.viewComponents.time, this.getComponentProps()))]
+				[DOM.div({style:{flexGrow:'1.5'},key:'days'},React.createElement( Component, this.getComponentProps()))]
 
 			)
 		));
@@ -332,3 +331,6 @@ var Datetime = React.createClass({
 Datetime.moment = moment;
 
 module.exports = Datetime;
+
+
+//,DOM.div({style:{flexGrow:'1'},key:'time'},React.createElement( this.viewComponents.time, this.getComponentProps()))
