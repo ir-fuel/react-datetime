@@ -78,7 +78,7 @@ var DateTimePickerTime = React.createClass({
 		}
 	},
 	renderHeader: function(){
-			return '';
+		return DOM.thead({key:'header'});
 	},
 	onStartClicking: function( action, type ){
 		var me = this,
